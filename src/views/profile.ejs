@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body class="grey lighten-4">
+
+  <nav class="teal">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Mi Perfil</a>
+      <ul class="right">
+        <li><a href="#" id="dashboardLink">Dashboard</a></li>
+        <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 40px; max-width: 800px;">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Mi Cuenta</span>
+
+        <form id="profileForm">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="name" type="text" required>
+              <label class="active" for="name">Nombre</label>
+            </div>
+
+            <div class="input-field col s6">
+              <input id="lastName" type="text" required>
+              <label class="active" for="lastName">Apellido</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="email" type="email" disabled>
+              <label class="active" for="email">Correo</label>
+            </div>
+
+            <div class="input-field col s6">
+              <input id="phoneNumber" type="text" required>
+              <label class="active" for="phoneNumber">Teléfono</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="birthdate" type="date" required>
+              <label class="active" for="birthdate">Fecha de nacimiento</label>
+            </div>
+
+            <div class="input-field col s6">
+              <input id="age" type="text" disabled>
+              <label class="active" for="age">Edad</label>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <input id="address" type="text">
+            <label class="active" for="address">Dirección</label>
+          </div>
+
+          <div class="input-field">
+            <input id="url_profile" type="text">
+            <label class="active" for="url_profile">URL de perfil</label>
+          </div>
+
+          <div class="input-field">
+            <input id="roles" type="text" disabled>
+            <label class="active" for="roles">Roles</label>
+          </div>
+
+          <div class="center">
+            <button class="btn waves-effect waves-light teal" type="submit">
+              Guardar cambios
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Materialize JS (faltaba esto) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/js/profile.js"></script>
+</body>
+</html>

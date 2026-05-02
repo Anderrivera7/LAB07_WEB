@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body class="grey lighten-4">
+
+  <nav class="red darken-2">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Admin Panel</a>
+      <ul class="right">
+        <li><a href="/profile">Mi Perfil</a></li>
+        <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 40px;">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Panel de Administrador</span>
+        <p>Bienvenido administrador. Aquí podrás gestionar usuarios.</p>
+      </div>
+    </div>
+
+    <table class="striped white" id="usersTable">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Roles</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
