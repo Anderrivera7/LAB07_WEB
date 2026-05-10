@@ -36,6 +36,11 @@ app.get('/health', (req, res) => {
   res.status(200).json({ ok: true });
 });
 
+// Ruta raíz
+app.get('/', (req, res) => {
+  res.send('API JWT funcionando 🚀');
+});
+
 // 404
 app.use((req, res) => {
   res.status(404).render('404');
@@ -44,14 +49,16 @@ app.use((req, res) => {
 // Manejador global de errores
 app.use((err, req, res, next) => {
   console.error(err);
+
   res.status(err.status || 500).json({
     message: err.message || 'Error interno del servidor'
   });
 });
 
 const PORT = process.env.PORT || 3000;
+const MONGO_URI = process.env.MONGO_URI;
 
-mongoose.connect(process.env.MONGODB_URI, { autoIndex: true })
+mongoose.connect(MONGO_URI, { autoIndex: true })
   .then(async () => {
     console.log('Mongo connected');
 
@@ -59,7 +66,7 @@ mongoose.connect(process.env.MONGODB_URI, { autoIndex: true })
     await seedUsers();
 
     app.listen(PORT, () => {
-      console.log(`Servidor corriendo en http://localhost:${PORT}`);
+      console.log(`Servidor corriendo en puerto ${PORT}`);
     });
   })
   .catch(err => {
